@@ -82,10 +82,10 @@ public class ViewBinderHelper {
 
                 }
                 if (frontLayout != null) {
-                    if (state == SwipeRevealLayout.STATE_CLOSE) {
-                        frontLayout.setBackgroundResource(R.drawable.bg_main_swpie_item);
-                    } else {
+                    if (state == SwipeRevealLayout.STATE_OPEN || state == SwipeRevealLayout.STATE_DRAGGING) {
                         frontLayout.setBackgroundResource(R.drawable.bg_main_swpie_item_left);
+                    } else {
+                        frontLayout.setBackgroundResource(R.drawable.bg_main_swpie_item);
                     }
                 }
             }
