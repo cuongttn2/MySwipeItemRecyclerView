@@ -1,0 +1,93 @@
+package com.example.myswipeitemrecyclerview;
+
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.action_recycler_view) {
+            startActivity(new Intent(this, RecyclerDemoActivity.class));
+            return true;
+        } else if (itemId == R.id.action_list_view) {
+            startActivity(new Intent(this, ListDemoActivity.class));
+            return true;
+        } else if (itemId == R.id.action_grid_view) {
+            startActivity(new Intent(this, GridActivity.class));
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void layoutOneOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Layout 1 clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void layoutTwoOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Layout 2 clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void layoutThreeOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Layout 3 clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void layoutFourOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Layout 4 clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void moreOnClick(View v) {
+        Toast.makeText(MainActivity.this, "More clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void deleteOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Delete clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void archiveOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Archive clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void helpOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Help clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void searchOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Search clicked", Toast.LENGTH_SHORT).show();
+    }
+
+    public void starOnClick(View v) {
+        Toast.makeText(MainActivity.this, "Star clicked", Toast.LENGTH_SHORT).show();
+    }
+
+}
